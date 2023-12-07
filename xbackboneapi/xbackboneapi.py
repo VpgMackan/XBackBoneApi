@@ -22,6 +22,9 @@ class XBackBoneApi:
         self.session = requests.Session()
         self.session.headers.update({"token": self.TOKEN})
 
+        if self.BASE_URL.endswith("/"):
+            self.BASE_URL = self.BASE_URL[:-1]
+
     def make_request(
         self,
         method: str,
@@ -42,6 +45,12 @@ class XBackBoneApi:
         cookies = (
             {"xbackbone_session": self.SESSION_COOKIE} if self.SESSION_COOKIE else None
         )
+
+        # Ensure the token is always included in the data payload
+        if data is None:
+            data = {}
+        data["token"] = self.TOKEN
+
         response = self.session.request(
             method, full_url, data=data, files=files, cookies=cookies
         )

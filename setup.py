@@ -2,11 +2,12 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='xbackboneapi',
-    version='0.1',
+    name="xbackboneapi",
+    version="0.2",
     packages=find_packages(),
     install_requires=[
-        'requests',
-        'lxml',
+        "requests",
+        "lxml",
+        "typing",
     ],
 )

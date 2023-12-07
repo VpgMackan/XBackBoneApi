@@ -7,7 +7,7 @@ This project is a Python wrapper for the XBackBone API. It provides a simple way
 You can install this package using pip:
 
 ```shell
-pip install xbackboneapi
+pip install git+https://github.com/VpgMackan/XBackBoneApi
 ```
 
 ## Usage
